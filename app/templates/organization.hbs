@@ -2,7 +2,9 @@
 
 {{!-- #each is a built in helper we use to iterate & bind data from a payload/json object --}}
 {{#each model as |member|}}
-    <img src={{member.avatar_url}} alt={{member.login}} width="100">
+    <LinkTo @route="organization.user" @model={{member.login}}>
+        <img src={{member.avatar_url}} alt={{member.login}} width="100">
+    </LinkTo>
 {{/each}}
 
 {{outlet}}
